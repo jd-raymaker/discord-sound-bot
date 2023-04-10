@@ -29,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Docker/Dockerfile
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/discord-sound-bot:latest
