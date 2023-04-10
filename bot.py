@@ -13,7 +13,11 @@ class MyClient(discord.Client):
 
 intents = discord.Intents.default()
 bot = MyClient(intents=intents)
-token = open("token.txt", "r").readline()
+
+if os.path.exists("token.txt"):
+    token = open("token.txt", "r").readline()
+else:
+    token = os.environ['DISCORD_BOT_TOKEN']
 
 def get_file_names(directory_path):
     files = os.listdir(directory_path)
