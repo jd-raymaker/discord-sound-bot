@@ -16,8 +16,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: python_env
 
     steps:
+    - name: Env vars
+      env:
+        DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
